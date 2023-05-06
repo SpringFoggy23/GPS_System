@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String, Integer, orm, Float
 from app.models.base import Base
-
+from app.models.base import db
 
 class Program(Base):
     Name = Column(String(8), primary_key=True)
@@ -18,5 +18,5 @@ class Program(Base):
             self.Name=Name
             self.GPALow = GPALow
             self.GPAUpper = GPAUpper
-           # db.session.commit()
+            db.session.commit()
             return 0
