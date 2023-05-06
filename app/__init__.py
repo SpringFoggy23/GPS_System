@@ -1,5 +1,5 @@
 from flask import Flask
-from app.controller import TaughtCourseOffer, program,ResearchOffer,Student,Teacher,user
+from app.controller import TaughtCourseOffer, program,ResearchOffer,Student,Teacher,user,offer
 
 # 定义注册蓝图方法
 def register_blueprints(app):    
@@ -9,6 +9,8 @@ def register_blueprints(app):
     app.register_blueprint(TaughtCourseOffer.TaughtCourseOfferBP,url_prefix='/TaughtCourseOffer')
     app.register_blueprint(program.programBP, url_prefix='/program')
     app.register_blueprint(user.userBP,url_prefix='/user')
+    app.register_blueprint(offer.offerBP,url_prefix='/offer')
+
 
 
 # 注册插件(数据库关联)

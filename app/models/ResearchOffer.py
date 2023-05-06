@@ -8,12 +8,6 @@ class ResearchOffer(Base):
     No_Topic=Column(Integer)
     No_research=Column(Integer)
 
-    # def __init__(self, supervisor, name, research_topic, no_papers, no_research):
-    #     self.supervisor = supervisor
-    #     self.name = name
-    #     self.research_topic = research_topic
-    #     self.no_papers = no_papers
-    #     self.no_research = no_research
     
     def SubmitResearchOffer(self, supervisor, name, date, no_papers, no_research):
         # 研究项目提交功能的实现代码,将提供的参数值存储在类属性中

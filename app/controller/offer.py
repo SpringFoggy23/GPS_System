@@ -22,6 +22,6 @@ def get_offer():
 def change_offer():
     with db.auto_commit():
         offer = Offer.query.get(1)
-        offer.owner = 'Mike'
+        offer.owner = 'Mark'
 
-    return '111'
+    return '111'+request.method

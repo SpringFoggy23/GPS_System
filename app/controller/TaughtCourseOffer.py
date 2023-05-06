@@ -13,3 +13,12 @@ def get_TaughtCourseOffer():
             taught_course_offer.programName="Medicine"
             db.session.add(taught_course_offer)
         return "hello TaughtCourseOffer"
+
+@TaughtCourseOfferBP.route('search', methods=['GET'])
+
+def search():
+    with db.auto_commit():
+        #仅可支持主键查询
+        taughtCourseOffer = TaughtCourseOffer.query.get('Computer Science')
+        #taughtCourseOffer = TaughtCourseOffer.query.get('Havard university')
+    return taughtCourseOffer.universityname

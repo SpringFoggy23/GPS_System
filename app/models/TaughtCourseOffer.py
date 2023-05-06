@@ -3,13 +3,10 @@ from app.models.base import Base
 
 
 class TaughtCourseOffer(Base):
-    #universityname = Column(String(50), primary_key=True, autoincrement=True)
     universityname = Column(String(50))
     programName=Column(String(30), primary_key=True)
 
-    # def __init__(self, universityname, programName):
-    #     self.universityname = universityname
-    #     self.programName = programName
+
     
     def SubmitTaughtOffer(self, Title, CompanyName, date, GPA):
         # 将提供的参数值存储在类属性中
