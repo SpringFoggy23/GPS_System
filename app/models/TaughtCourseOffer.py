@@ -5,7 +5,10 @@ from app.models.base import Base
 class TaughtCourseOffer(Base):
     universityname = Column(String(50))
     programName=Column(String(30), primary_key=True)
-
+    Title=Column(String(30))
+    CompanyName=Column(String(30))
+    date=Column(String(30))#datetime 使用更简便的方法
+    GPA=Column(Float(precision=2))
 
     
     def SubmitTaughtOffer(self, Title, CompanyName, date, GPA):

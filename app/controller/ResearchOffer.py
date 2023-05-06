@@ -17,4 +17,26 @@ def send_ResearchOffer():
             research_offer.No_research=7
              
             db.session.add(research_offer)
-        return 'hello Successful'
+        return 'hello Successfully'
+
+@ResearchOfferBP.route('Submit', methods=['GET'])
+
+def SubmitResearchOffer():
+        with db.auto_commit():
+            research_offer=ResearchOffer()
+            research_offer.Supervisor="Dr.Wang"
+            research_offer.Name="OfferFromUCL"
+            research_offer.ResearchTopic="EarthScience"
+            research_offer.No_Topic=9
+            research_offer.No_research=13
+             
+            db.session.add(research_offer)
+        return 'Submit Successful'
+
+@ResearchOfferBP.route('search', methods=['GET'])
+def search():
+    with db.auto_commit():
+        #仅可支持主键查询
+        researchOffer = ResearchOffer.query.get('OfferFromUCL')
+        answer= researchOffer.Supervisor +"      "+researchOffer.ResearchTopic+"     "+ str(researchOffer.No_Topic) +"   " 
+    return answer
