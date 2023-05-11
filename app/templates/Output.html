@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Offer Results</title>
+</head>
+<body>
+    <h1>Search Offer Results</h1>
+    {% if offers %}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Owner</th>
+                <th>GPA</th>
+            </tr>
+            {% for offer in offers %}
+                <tr>
+                    <td>{{ offer.id }}</td>
+                    <td>{{ offer.date }}</td>
+                    <td>{{ offer.owner }}</td>
+                    <td>{{ offer.gpa }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No offers found for program "{{ program_name }}".</p>
+    {% endif %}
+</body>
+</html>
